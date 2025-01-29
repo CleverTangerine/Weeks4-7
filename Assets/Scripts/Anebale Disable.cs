@@ -7,6 +7,8 @@ public class AnebaleDisable : MonoBehaviour
     public SpriteRenderer sr;
     public AnebaleDisable script;
     public GameObject GO;
+    public AudioSource audioSource;
+    public AudioClip clip;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,19 @@ public class AnebaleDisable : MonoBehaviour
             //sr.enabled = true;
             //script.enabled = true;
             GO.SetActive(true);
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            //if (!audioSource.isPlaying)
+            //{
+            //    audioSource.Play();
+            //}
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(clip);
+            }
+            
         }
     }
 }
